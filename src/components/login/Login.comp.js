@@ -6,7 +6,7 @@ export const LoginForm = () => {
         <Container>
             <Row>
                 <Col>
-                <h1>
+                <h1 className="text-info text-center">
                     Client Login
                 </h1>
                 <hr/>
