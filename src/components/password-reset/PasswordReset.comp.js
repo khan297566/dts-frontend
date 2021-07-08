@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Container, Row, Col, Form, Button} from 'react-bootstrap'
 
-export const LoginForm = ({handleOnchange, handleOnSubmit, formSwitcher, email, pass}) => {
+export const ResetPassword = ({handleOnchange, handleOnResetSubmit, formSwitcher, email}) => {
     return (
         <Container>
             <Row>
                 <Col>
                 <h1 className="text-info text-center">
-                    Client Login
+                    Reset Password
                 </h1>
                 <hr/>
-                <Form autoComplete="off" onSubmit={handleOnSubmit}>
+                <Form autoComplete="off" onSubmit={handleOnResetSubmit}>
                     <Form.Group>
                         <Form.Label>
                             Email Address
@@ -25,21 +25,9 @@ export const LoginForm = ({handleOnchange, handleOnSubmit, formSwitcher, email, 
                         required
                         />
                     </Form.Group>
-                    <Form.Group>
-                        <Form.Label>
-                            Password
-                        </Form.Label>
-                        <Form.Control 
-                        type="password" 
-                        name="password"
-                        onChange={handleOnchange} 
-                        value={pass} 
-                        placeholder="Enter password"
-                        required
-                        />
-                    </Form.Group>
+                    
                     <br></br>
-                    <Button type="submit">Login</Button>
+                    <Button type="submit">Reset Password</Button>
                 </Form>
                 <hr />
                 </Col>
@@ -47,7 +35,7 @@ export const LoginForm = ({handleOnchange, handleOnSubmit, formSwitcher, email, 
 
             <Row>
                 <Col>
-                <a href="#!" onClick={()=>formSwitcher("reset")}>Forget Password?</a>
+                <a href="#!" onClick={()=>formSwitcher("login")}>Login Now</a>
                 </Col>
             </Row>
             <br></br>
@@ -55,10 +43,9 @@ export const LoginForm = ({handleOnchange, handleOnSubmit, formSwitcher, email, 
     )
 }
 
-LoginForm.propTypes = {
+ResetPassword.propTypes = {
     handleOnchange: PropTypes.func.isRequired,
-    handleOnSubmit: PropTypes.func.isRequired,
+    handleOnResetSubmit: PropTypes.func.isRequired,
     formSwitcher: PropTypes.func.isRequired,
     email: PropTypes.string.isRequired,
-    pass: PropTypes.string.isRequired,
 }
